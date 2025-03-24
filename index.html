@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UFT-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h6 style "font-family: Comic Sans Ms, cursive, sans-serif; font-size: 1.25em;">
+</style>
+
+<title>Laboratorio3</title>
+<script>
+    function guardarInfo(){
+        const infoNombre = document.getElementById ("Nombre").value ;
+        const infoFecha = document.getElementById ("Fecha"). value ;
+        const infoHora = document.getElementById ("Hora"). value ;
+        const infoDescripcion = document.getElementById ("Descripcion"). value ;
+
+        localStorage.setItem ("Nombre", infoNombre ) ;
+        localStorage.setItem ("Fecha", infoFecha ) ;
+        localStorage.setItem ("Hora", infoHora ) ;
+        localStorage.setItem ("Descripcion", infoDescripcion) ;
+    }
+
+ function LeerInfo() {
+const infoNombre = localStorage.getItem ("Nombre") ;
+const infoFecha = localStorage.getItem ("Fecha") ;
+const infoHora = localStorage.getItem ("Hora") ;
+const infoDescripcion = localStorage.getItem ("Descripcion") ;
+
+document.getElementById("Nombre"). value = infoNombre ;
+document.getElementById("Fecha"). value = infoFecha ;
+document.getElementById("Hora"). value = infoHora ;
+document.getElementById("Descripcion"). value = infoDescripcion ;
+
+ }   
+
+ function borrarInfo(){
+  localStorage.removeItem("Nombre") ;
+  localStorage.removeItem("Fecha") ;
+  localStorage.removeItem("Hora") ;
+  localStorage.removeItem("Descripcion") ;
+
+ }
+</script>
+</head>
+
+<body>
+<script>
+document.write( "Laboratorio 3");
+
+</script>
+<form onsubmit="guardarInfo(); return false ;">
+    <label for= Nombre>Nombre de la tarea: </label>
+    <input type= "text" id="Nombre" name="Nombre de la tarea"><br><br>
+    <label for= Fecha>Fecha de la tarea: </label>
+    <input type= "text" id="Fecha" name="Fecha de la tarea"><br><br>
+    <label for= Hora>Hora de la tarea: </label>
+    <input type= "text" id="Hora" name="Hora de la tarea"><br><br>
+    <label for= Descripcion>Descripcion de la tarea: </label>
+    <input type= "text" id="Descripcion" name="Descripcion"><br><br>
+
+    <input type="submit" value="Enviar">
+
+    <input type="button" onclick="LeerInfo()" value="Leer"> 
+    
+    <input type="button" onclick="borrarInfo()" value="Borrar">
+    </form>
+
+</body>
